@@ -1,6 +1,6 @@
-# Getting Started with John's Template
+# SimpleStat Soccer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple UI for tracking player statistics during game replays or live games.
 
 ## Installation
 
