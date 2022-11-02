@@ -1,14 +1,5 @@
-.JohnImage {
-    height: 300px;
-    width: auto;
-}
-
-.LeftSide {
-    display: flex;
-    align-items: center;
-}
-
-.RightSide {
-    display: flex;
-    align-items: center;
+.soccerimg {
+    width: 80%;
+    height: auto;
+    margin-top: 25px;
 }
