@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { Col, Row, Button, Dropdown } from "react-bootstrap";
+import { Col, Row, Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
-import "./SetupGame.css"
+import "./SetupGame.css";
+import { useDispatch } from 'react-redux'
+import { setPlayers } from '../features/counter/counterSlice';
+import { LinkContainer } from "react-router-bootstrap";
 
 export default function Home() {
+
+    const dispatch = useDispatch();
 
     const [playerNames, setPlayerNames] = useState([]);
     const [playerNumbers, setPlayerNumbers] = useState([]);
@@ -83,9 +88,11 @@ export default function Home() {
                         You'll have a chance to select formation after this step.
                     </p>
                     <br></br>
-                    <Button variant="primary">
-                        Continue
-                    </Button>
+                    <LinkContainer to="/game">
+                        <Button variant="primary" onClick={() => dispatch(setPlayers([playerNames, playerNumbers]))}>
+                            Continue
+                        </Button>
+                    </LinkContainer>
                 </Col>
             </Row>
         </div>
