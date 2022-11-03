@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Col, Row, Button, ListGroup } from "react-bootstrap";
-import { useSelector, useDispatch } from 'react-redux';
-import { setPlayers } from '../features/counter/counterSlice';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import { BsPlayFill, BsPauseFill } from 'react-icons/bs';
+import { useSelector } from 'react-redux';
 import './GameStyles.css';
 
 export default function Game() {
 
     const reduxNames = useSelector((state) => state.counter.playerNames);
     const reduxNumbers = useSelector((state) => state.counter.playerNumbers);
-    const dispatch = useDispatch();
 
     const actions = ['pass', 'shot', 'skill move', 'throw in', 'freekick', 'save'];
 
@@ -32,11 +28,6 @@ export default function Game() {
         setActivePlayerIndex(-1);
         setActionIndex(-1);
         setTargetIndex(-1);
-    }
-
-    function utilEvent(name) {
-        setEvents([...events, name]);
-        clearEvent();
     }
     
     function saveEvent() {
