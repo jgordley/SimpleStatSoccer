@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row, Button, ListGroup } from "react-bootstrap";
 import { useSelector } from 'react-redux';
+import { CSVLink } from "react-csv";
 import './GameStyles.css';
 
 export default function Game() {
@@ -23,6 +24,10 @@ export default function Game() {
     const [targetIndex, setTargetIndex] = useState(-1);
 
     const [events, setEvents] = useState([]);
+
+    function generateData() {
+        return [events];
+    }
 
     function clearEvent() {
         setActivePlayerIndex(-1);
@@ -225,11 +230,13 @@ export default function Game() {
                 </Col>
                 <Col md="4">
                     <h4>Game Log</h4>
-                    <ListGroup>
+                    <ListGroup style={{height: '400px', overflowY: 'scroll', scrollbarWidth: 'none'}}>
                         {events.map((event, idx) => (
                             <ListGroup.Item key={idx}>{event}</ListGroup.Item>
                         ))}
                     </ListGroup>
+                    <CSVLink data={generateData()}>Download Report</CSVLink>
+
                 </Col>
             </Row>
         </div>

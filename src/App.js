@@ -17,11 +17,8 @@ function App() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav>
-            <LinkContainer to="/signup">
-              <Nav.Link>Signup</Nav.Link>
-            </LinkContainer>
             <LinkContainer to="/setup">
-              <Nav.Link>Login</Nav.Link>
+              <Nav.Link>Start Game</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
