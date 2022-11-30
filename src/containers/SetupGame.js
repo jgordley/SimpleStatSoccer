@@ -84,10 +84,6 @@ export default function Home() {
                 <Col md="6">
                     <img class="coachimg" src="https://images.unsplash.com/photo-1585757318177-0570a997dc3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="coach"></img>
                     <br></br>
-                    <p>
-                        You'll have a chance to select formation after this step.
-                    </p>
-                    <br></br>
                     <LinkContainer to="/game">
                         <Button variant="primary" onClick={() => dispatch(setPlayers([playerNames, playerNumbers]))}>
                             Continue
