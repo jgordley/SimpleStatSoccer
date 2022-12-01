@@ -11,7 +11,7 @@ export default function Game() {
 
     const actions = ['pass', 'shot', 'skill move', 'throw in', 'freekick', 'save'];
 
-    const shotOptions = ['on goal', 'not on goal'];
+    const shotOptions = ['on goal', 'not on goal', 'scored'];
 
     const skillOptions = ['stepover', 'rabona', 'nutmeg', 'flick'];
 
@@ -26,7 +26,12 @@ export default function Game() {
     const [events, setEvents] = useState([]);
 
     function generateData() {
-        return [events];
+        let separateEvents = [];
+        events.forEach(event => {
+            separateEvents.push([event])
+        });
+        console.log(separateEvents);
+        return [separateEvents];
     }
 
     function clearEvent() {
@@ -209,18 +214,6 @@ export default function Game() {
                 </Col>
                 <Col md="2">
                     <h4>Utils</h4>
-                    <Button className="utilsButton" variant="primary" onClick={clearEvent}>
-                        Home Goal
-                    </Button>
-                    <Button className="utilsButton" variant="primary" onClick={clearEvent}>
-                        Away Goal
-                    </Button>
-                    <Button className="utilsButton" variant="primary" onClick={clearEvent}>
-                        Home Corner
-                    </Button>
-                    <Button className="utilsButton" variant="primary" onClick={clearEvent}>
-                        Away Corner
-                    </Button>
                     <Button className="utilsButton" variant="primary" onClick={clearEvent}>
                         Clear Event
                     </Button>
